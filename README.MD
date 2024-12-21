@@ -59,9 +59,6 @@ You can modify the default note or change the privacy settings for any note from
 ### Deployment
 The project is designed to run inside a Docker container for easy deployment. You can deploy it on any server by following the same steps to build and run the Docker container.
 
-### Mobile Responsiveness
-The application is optimized for mobile devices. On mobile, a hamburger menu is used to toggle the sidebar, providing an easy way to navigate between notes.
-
 ### Contributing
 If you'd like to contribute to GoShareNotes, please fork the repository, make your changes, and submit a pull request. Be sure to follow the existing code structure and include tests for new features or bug fixes.
 
