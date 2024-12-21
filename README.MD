@@ -1,4 +1,4 @@
-# GoShareNotes
+I'll# GoShareNotes
 
 GoShareNotes is a simple, collaborative note-sharing web application designed for users on the same local network. The app allows users to view, write, and edit notes without the need for account creation. Users can set privacy levels for their notes and interact with others in real time.
 
@@ -35,7 +35,7 @@ Make sure you have the following installed:
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/GoShareNotes.git
+   git clone https://github.com/Sadiq-Muhammad/GoShareNotes.git
 2. Navigate to the project directory:
    ```bash
    cd GoShareNotes
