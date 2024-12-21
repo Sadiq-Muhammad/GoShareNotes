@@ -1,1 +1,25 @@
 
+version: "3.9"
+
+services:
+  web:
+    build:
+      context: .
+    container_name: django_app
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    environment:
+      - DEBUG=True
+      - DJANGO_SETTINGS_MODULE=myproject.settings
+    networks:
+      - app_network
+
+volumes:
+  sqlite_data:
+
+networks:
+  app_network:
+    driver: bridge
