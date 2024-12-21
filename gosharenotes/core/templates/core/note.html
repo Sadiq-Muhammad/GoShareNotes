@@ -1,0 +1,16 @@
+{% extends 'core/base.html' %}
+
+{% block noteTabTitle %}
+{{ note.title }}
+{% endblock %}
+
+{% block noteTitle %}
+{{ note.title }}
+{% endblock %}
+
+{% block noteContent %}
+{{ note.content }}
+{% endblock %}
+
+{% block saveButton %} <button id="saveButton" style="display: none;">Save Note</button> {% endblock %}
+{% block deleteButton %} <button id="deleteButton" data-note-id="{{ note.id }}" style="display: block;">Delete</button> {% endblock %}

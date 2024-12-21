@@ -1,0 +1,122 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block noteTabTitle %} {% endblock%} | GoShareNotes</title>
+    <link rel="stylesheet" href="{% static 'CSS/styles.css' %}">
+    <link rel="icon" type="image/x-icon" href="{% static 'Resources/logo.ico' %}">
+</head>
+
+<body>
+    <div class="sidebar">
+        <h3><a class="sidebarHero" href="{% url 'index' %}">Go Share Notes | Notes:</a></h3>
+        <ul>
+            {% for note_item in notes %}
+            <li>
+                <a href="#" class="note-link" data-note-id="{{ note_item.id }}"
+                    data-note-privacy="{{ note_item.privacy }}">
+                    {{ note_item.title }}
+                    <span class="notePrivacyIcon">
+                        {% if note_item.privacy == 'private' %}
+                        <img src="{% static 'Resources/private.png' %}" alt="Private" />
+                        {% elif note_item.privacy == 'semi-public' %}
+                        <img src="{% static 'Resources/public.png' %}" alt="Semi-Public" />
+                        {% else %}
+                        <img src="{% static 'Resources/public.png' %}" alt="Public" />
+                        {% endif %}
+                    </span>
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div class="main">
+        <h1>{% block noteTitle %} {% endblock%}</h1>
+        <textarea id="noteContent">{% block noteContent %} {% endblock%}</textarea>
+        <div class="actionButtons">
+            {% block saveButton %} {% endblock %}
+            {% block deleteButton %} {% endblock %}
+            <button id="editButton" data-note-id="{{ note.id }}" data-note-privacy="{{ note.privacy }}">Edit
+                Note</button>
+        </div>
+    </div>
+
+    <!-- Modal for Saving Notes -->
+    <div class="modal" id="saveModal">
+        <div class="modal-content">
+            <h2>Save Note</h2>
+            <form method="post" action="{% url 'save_note' %}" id="noteForm">
+                {% csrf_token %}
+                <label for="title">Title</label>
+                <input type="text" id="title" name="title" required>
+
+                <label for="privacy">Privacy</label>
+                <select id="privacy" name="privacy" required>
+                    <option value="public">Public</option>
+                    <option value="semi-public">Semi-public</option>
+                    <option value="private">Private</option>
+                </select>
+
+                <!-- Hidden input to store the content from the external textarea -->
+                <input type="hidden" id="content" name="content">
+
+                <label for="password">Password</label>
+                <input type="password" id="setPassword" name="password" required>
+
+                <button type="submit">Save</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Password Modal -->
+    <div class="modal" id="passwordModal" style="display: none;">
+        <div class="modal-content">
+            <h2>Enter Password</h2>
+            <form method="post" id="passwordForm">
+                {% csrf_token %}
+                <input type="password" id="passwordGet" name="password" required placeholder="Enter Password">
+                <button type="submit">Submit</button>
+            </form>
+            <button id="cancelPassword">Cancel</button>
+        </div>
+    </div>
+    <div class="modal" id="editPasswordModal" style="display: none;">
+        <div class="modal-content">
+            <h2>Enter Password</h2>
+            <form method="post" id="editPasswordForm">
+                {% csrf_token %}
+                <input type="password" id="editPasswordGet" name="password" required placeholder="Enter Password">
+                <button type="submit">Submit</button>
+            </form>
+            <button id="editCancelPassword">Cancel</button>
+        </div>
+    </div>
+    <div class="modal" id="deletePasswordModal" style="display: none;">
+        <div class="modal-content">
+            <h2>Enter Password</h2>
+            <form method="post" id="deletePasswordForm">
+                {% csrf_token %}
+                <input type="password" id="deletePasswordGet" name="password" required placeholder="Enter Password">
+                <button type="submit">Submit</button>
+            </form>
+            <button id="deleteCancelPassword">Cancel</button>
+        </div>
+    </div>
+
+    <script> noteIdForAutoSave = '{{ note.id }}'</script>
+    <script src="{% static 'JavaScript/crypto-js.min.js' %}"></script>
+    <script src="{% static 'JavaScript/main.js' %}"></script>
+
+    <!-- Footer -->
+    <footer>
+        <div class="ribbon">
+            &copy; 2024 GoShareNotes by Sadiq Alabodi. All rights reserved.
+        </div>
+    </footer>
+</body>
+
+</html>

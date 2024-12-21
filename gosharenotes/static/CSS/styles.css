@@ -1,0 +1,201 @@
+ /* Dark theme styling */
+ body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: #ffffff;
+    display: flex;
+    height: 100vh;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #1f1f1f;
+    padding: 20px;
+    overflow-y: auto;
+    border-right: 1px solid #333;
+}
+
+.sidebar h3{
+    margin: 0 0 10px;
+    color: #e0e0e0;
+}
+
+.sidebarHero {
+    text-decoration: none;
+    color: #e0e0e0;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 10px;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #a0a0a0;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.sidebar ul li a.active {
+    background-color: #333;
+    color: #ffffff;
+}
+
+.sidebar ul li a:hover {
+    background-color: #333;
+    color: #ffffff;
+}
+
+.notePrivacyIcon {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+}
+
+.notePrivacyIcon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.main {
+    flex-grow: 1;
+    padding: 20px;
+}
+
+.main h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.main textarea {
+    width: 95%;
+    height: 60%;
+    margin-bottom: 15px;
+    background-color: #1f1f1f;
+    color: #ffffff;
+    border: 1px solid #333;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 1rem;
+    resize: none;
+}
+
+.main textarea:focus {
+    outline: none;
+    border-color: #555;
+}
+
+.main button {
+    padding: 10px 15px;
+    background-color: #6200ee;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.main button:hover {
+    background-color: #3700b3;
+}
+
+.actionButtons {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-start;
+    margin-top: 10px;
+}
+
+/* Modal styling */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.modal-content {
+    background-color: #1f1f1f;
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+}
+
+.modal-content h2 {
+    margin: 0 0 15px;
+}
+
+.modal-content label {
+    display: block;
+    margin-bottom: 5px;
+    color: #e0e0e0;
+}
+
+.modal-content input {
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 15px;
+    background-color: #333;
+    color: #ffffff;
+    border: 1px solid #444;
+    border-radius: 5px;
+}
+.modal-content select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    background-color: #333;
+    color: #ffffff;
+    border: 1px solid #444;
+    border-radius: 5px;
+}
+
+.modal-content button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    background-color: #6200ee;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.modal-content button:hover {
+    background-color: #3700b3;
+}
+
+/* styles.css */
+
+footer {
+    position: fixed; /* Ensures it stays at the bottom of the viewport */
+    bottom: 0;
+    left: 0;
+    width: 100%; /* Stretches across the width of the page */
+    background-color: #333; /* Dark background color */
+    color: white; /* Text color */
+    text-align: center; /* Centers the text */
+    padding: 10px 0; /* Adds vertical padding */
+    font-size: 14px; /* Sets font size */
+    z-index: 1000; /* Keeps it on top of other elements */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow for depth */
+}
+
+.ribbon {
+    font-family: Arial, sans-serif;
+}
