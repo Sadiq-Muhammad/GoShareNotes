@@ -67,4 +67,4 @@ If you'd like to contribute to GoShareNotes, please fork the repository, make yo
 
 ## License
 
-This project is licensed under the MIT License - see the ![License](https://img.shields.io/badge/license-MIT-blue.svg) file for details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) ![License](https://img.shields.io/badge/license-MIT-blue.svg) file for details.
