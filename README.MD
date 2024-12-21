@@ -64,3 +64,7 @@ The application is optimized for mobile devices. On mobile, a hamburger menu is 
 
 ### Contributing
 If you'd like to contribute to GoShareNotes, please fork the repository, make your changes, and submit a pull request. Be sure to follow the existing code structure and include tests for new features or bug fixes.
+
+## License
+
+This project is licensed under the MIT License - see the ![License](https://img.shields.io/badge/license-MIT-blue.svg) file for details.
