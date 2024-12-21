@@ -1,4 +1,4 @@
-I'll# GoShareNotes
+# GoShareNotes
 
 GoShareNotes is a simple, collaborative note-sharing web application designed for users on the same local network. The app allows users to view, write, and edit notes without the need for account creation. Users can set privacy levels for their notes and interact with others in real time.
 
